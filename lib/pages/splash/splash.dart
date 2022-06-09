@@ -1,7 +1,7 @@
-import 'package:page_transition/page_transition.dart';
-import 'package:rive/rive.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart' as rive;
+import 'package:page_transition/page_transition.dart';
 
 import '../home/home.dart';
 
@@ -20,12 +20,12 @@ class _SplashPageState extends State<SplashPage> {
       overlays: [],
     );
 
-    Future.delayed(const Duration(seconds: 3)).then((value) {
+    Future.delayed(const Duration(milliseconds: 3300)).then((value) {
       // Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
       Navigator.of(context).pushAndRemoveUntil(
         PageTransition(
           child: const HomePage(),
-          type: PageTransitionType.bottomToTop,
+          type: PageTransitionType.fade,
           alignment: Alignment.bottomCenter,
           duration: const Duration(milliseconds: 500),
         ),
@@ -51,7 +51,16 @@ class _SplashPageState extends State<SplashPage> {
           );
         },
         child: Container(
-          color: Theme.of(context).colorScheme.background,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.orange.shade50,
+                Colors.orange.shade300,
+              ],
+            ),
+          ),
           child: Column(
             children: const [
               Spacer(flex: 10),
@@ -59,9 +68,11 @@ class _SplashPageState extends State<SplashPage> {
                 child: SizedBox(
                   width: 350,
                   height: 350,
-                  child: RiveAnimation.asset(
-                    'assets/animates/zumbeedo_logo.riv',
-                    animations: ['Start'],
+                  child: RepaintBoundary(
+                    child: rive.RiveAnimation.asset(
+                      'assets/animates/zumbeedo_logo.riv',
+                      animations: ['Start'],
+                    ),
                   ),
                 ),
               ),

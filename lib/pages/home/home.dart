@@ -79,10 +79,12 @@ class _HomePageState extends State<HomePage> {
                       : MediaQuery.of(context).size.width * 0.6,
                   child: GestureDetector(
                     onTap: (() {}),
-                    child: const rive.RiveAnimation.asset(
-                      "assets/animates/recording.riv",
-                      animations: ["Start"],
-                      fit: BoxFit.fitWidth,
+                    child: const RepaintBoundary(
+                      child: rive.RiveAnimation.asset(
+                        "assets/animates/recording.riv",
+                        animations: ["Start"],
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
                   ),
                 ),
