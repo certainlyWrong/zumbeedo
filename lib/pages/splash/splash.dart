@@ -51,13 +51,13 @@ class _SplashPageState extends State<SplashPage> {
           );
         },
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.orange.shade50,
-                Colors.orange.shade300,
+                Color.fromARGB(255, 255, 255, 255),
+                Color.fromARGB(255, 255, 240, 211),
               ],
             ),
           ),

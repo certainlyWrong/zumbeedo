@@ -7,10 +7,10 @@ import 'package:zumbeedo/pages/splash/splash.dart';
 
 void main() {
   if (kDebugMode) {
-    // debugPrintMarkNeedsPaintStacks = true;
+    debugRepaintRainbowEnabled = true;
     // debugProfilePaintsEnabled = true;
     // debugProfileBuildsEnabled = true;
-    debugRepaintRainbowEnabled = true;
+    // debugPrintMarkNeedsPaintStacks = true;
   }
   runApp(const Init());
 }
