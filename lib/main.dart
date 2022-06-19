@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/foundation.dart';
 import 'package:zumbeedo/pages/home/home_page.dart';
 import 'package:zumbeedo/pages/splash/splash_page.dart';
+import 'package:zumbeedo/repositories/historic_repository_local.dart';
 
 void main() {
   if (kDebugMode) {
@@ -22,7 +23,9 @@ class Init extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: const [],
+      providers: [
+        Provider(create: (_) => HistoricRepositoryLocal()),
+      ],
       child: MaterialApp(
         theme: zumbeedoLightTheme,
         darkTheme: zumbeedoDarkTheme,

@@ -1,3 +1,0 @@
-class HistoricRepository {
-  HistoricRepository._();
-}

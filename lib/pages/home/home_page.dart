@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../global/widgets/zumbeedo_navagation_bar.dart';
+import 'package:zumbeedo/global/widgets/zumbeedo_navagation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             end: Alignment.bottomCenter,
             colors: [
               Colors.white,
-              Color(0xffFFF0D3),
+              Color.fromARGB(255, 255, 231, 183),
               // Color.fromARGB(255, 247, 166, 0),
             ],
           ),
@@ -52,17 +51,16 @@ class _HomePageState extends State<HomePage> {
               flex: 1,
             ),
             FittedBox(
+              fit: BoxFit.contain,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
                     "assets/logo.svg",
-                    fit: BoxFit.fitWidth,
-                    width: 70,
+                    width: 70.0,
                   ),
                   SvgPicture.asset(
                     "assets/logo_name.svg",
-                    fit: BoxFit.fitWidth,
                     width: 120,
                   ),
                 ],
@@ -131,7 +129,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Spacer(flex: 10),
-            const ZumbeedoNavigator(),
+            const ZumbeedoNavigator(index: 1),
           ],
         ),
       ),
