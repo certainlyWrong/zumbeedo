@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:zumbeedo/widgets/navagation_bar.dart';
+
+import '../../global/widgets/zumbeedo_navagation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -37,8 +38,8 @@ class _HomePageState extends State<HomePage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 255, 255, 255),
-              Color.fromARGB(255, 255, 240, 211),
+              Colors.white,
+              Color(0xffFFF0D3),
               // Color.fromARGB(255, 247, 166, 0),
             ],
           ),
@@ -68,14 +69,29 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const Spacer(flex: 5),
-            const FittedBox(
+            FittedBox(
               child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  "Toque no botão abaixo para\nouvir a sua comeia!",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 107, 90, 86),
+                padding: const EdgeInsets.all(20),
+                child: RichText(
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    text: "Toque no botão abaixo para",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff6B5A56),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "\nouvir sua colmeia!",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff6B5A56),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -114,12 +130,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            const Spacer(flex: 5),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 70,
-              color: Colors.black38,
-            ),
+            const Spacer(flex: 10),
+            const ZumbeedoNavigator(),
           ],
         ),
       ),

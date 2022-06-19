@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:page_transition/page_transition.dart';
 
-import '../home/home.dart';
+import '../home/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
