@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:page_transition/page_transition.dart';
+import 'package:zumbeedo/pages/pageview_zumbeedo/pageview_zumbeedo.dart';
 
 import '../home/home_page.dart';
 
@@ -24,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
       // Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
       Navigator.of(context).pushAndRemoveUntil(
         PageTransition(
-          child: const HomePage(),
+          child: const ZumbeedoPage(),
           type: PageTransitionType.fade,
           alignment: Alignment.bottomCenter,
           duration: const Duration(milliseconds: 500),

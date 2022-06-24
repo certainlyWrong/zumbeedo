@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:zumbeedo/global/widgets/zumbeedo_navagation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -129,7 +128,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Spacer(flex: 10),
-            const ZumbeedoNavigator(index: 1),
           ],
         ),
       ),

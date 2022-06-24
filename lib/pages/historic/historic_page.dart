@@ -9,26 +9,28 @@ class HistoricPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Histórico"),
-        // backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      body: Center(
-        child: Container(
-          color: Theme.of(context).colorScheme.background,
-          child: ListView(
-            children: const [
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-              HistoricCard(),
-            ],
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              children: const [
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+                HistoricCard(),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

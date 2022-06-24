@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:zumbeedo/pages/home/home_page.dart';
 import 'package:zumbeedo/pages/splash/splash_page.dart';
 import 'package:zumbeedo/repositories/historic_repository_local.dart';
+import 'package:zumbeedo/pages/pageview_zumbeedo/pageview_zumbeedo.dart';
 
 void main() {
   if (kDebugMode) {
@@ -24,7 +25,8 @@ class Init extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(create: (_) => HistoricRepositoryLocal()),
+        Provider<HistoricRepositoryLocal>(
+            create: (_) => HistoricRepositoryLocal()),
       ],
       child: MaterialApp(
         theme: zumbeedoLightTheme,
@@ -34,6 +36,7 @@ class Init extends StatelessWidget {
         routes: {
           '/': (_) => const SplashPage(),
           '/home': (_) => const HomePage(),
+          '/zumbeedo': (_) => const ZumbeedoPage(),
         },
       ),
     );
